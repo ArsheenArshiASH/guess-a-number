@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+/* selecting style for all pages of body */
+body{
+  font-family: Georgia, "Times New Roman", Times, serif, "Times New Roman",serif; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  background: rgb(167, 255, 180);
+  transition: background-color 400ms ease-in-out , color 400ms ease-in-out ;
+  text-align: center;
+}
+/* medium page body styles */
+.medium{
+    background: rgb(110, 246, 194);
+}
+.hard{
+    background: rgb(248, 255, 144);
+}
+.levelsHeading{
+  padding-block: 1.5rem 1rem;
+  text-shadow: -2px 4px 4px rgb(253, 255, 253);
+}
+.levelsHeading + h2{
+  padding: 1rem;
+}
+#questionNum{
+  font-size: clamp(1.4rem , 3vw + 1rem , 3.5rem);
+  border: 2px solid rgb(13, 255, 13);
+  border-radius: 10px;
+  padding: 0.6rem 1.75rem;
+  display: grid;
+  place-items: center;
+  color:white;
+  background-color: rgb(12, 149, 12);
+  margin-block: 0.5rem;
+  transition: background-color 350ms ease-in-out;
+}
+#questionNum:hover{
+  background-color:rgb(46, 174, 46);
+}
+#guessForm{
+  margin-top: 0.4rem;
+  padding: 3rem 2rem;
+  border: 2px solid rgb(35, 96, 13);
+  text-align: center;
+}
+#numberInput{
+  padding: 0.39rem;
+  margin-bottom: 0.7rem;
+}
+#btnCheck{
+  padding: 0.3rem 1rem;
+  font: inherit;
+  font-weight: bold;
+  background-color: rgb(12, 149, 12);
+  color:white
+}
+#btnCheck:hover{
+ background-color: rgb(19, 170, 19);
+}
+#result{
+  padding-block:1rem 0.5rem;
+  font-weight: 700;
+  transition: font-size 400ms ease-in-out;
+}
+
+/* main === index page */
+.main-body {
+  background: #2a7b9b;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(87, 199, 133, 1) 50%,
+    rgba(237, 221, 83, 1) 100%
+  );
+  min-height: 100vh;
+}
+.main-heading {
+  margin-top: 1em;
+  font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+  text-shadow: 2px 4px 4px rgb(116, 255, 116);
+  animation: opacity 1000ms ease-in-out;
+}
+.game-levels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 1rem 0 1rem;
+}
+.level {
+  /* margin-top: 2rem; */
+  padding: 1rem 2.5rem;
+  height: 400px;
+  background: linear-gradient(to right, rgb(202, 253, 202), rgb(233, 252, 233));
+  border: 2px solid black;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.level h2 {
+  font-style: oblique;
+  font-size: 1.4rem;
+}
+.level h3,
+.level p {
+  padding-block: 1rem;
+}
+.num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  display: inline-block;
+  animation: moveUp 400ms ease-in-out alternate-reverse infinite;
+}
+.level a {
+  text-decoration: none;
+  font-size: larger;
+  color: white;
+  background-color: green;
+  padding: 0.78rem 2rem;
+  border-radius: 12px;
+  outline: 2px solid lightgreen;
+  margin-top: auto;
+  transition: background-color 200ms ease-in-out;
+}
+.level a:hover {
+  background-color: rgb(8, 78, 8);
+}
+.mainArrow {
+  max-width: 100%;
+  animation: moveDown 1000ms ease-in-out alternate-reverse infinite;
+}
+@keyframes opacity {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1rem);
+  }
+}
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-0.2em);
+  }
+}
+@media only screen and (max-width: 400px) {
+  .level h3,
+  .level p {
+    padding-block: 0.65rem;
+  }
+}

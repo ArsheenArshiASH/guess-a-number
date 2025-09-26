@@ -10,13 +10,26 @@ var attempts = 0;
 var pathName = window.location.pathname;
 console.log(pathName);
 var maxNum = 0;
-if (pathName === `/easy.html`) {
+// if (pathName === `/easy.html`) { //will only works when not deployed
+//   maxNum = 10;
+//   attempts = 10;
+// } else if (pathName === `/medium.html`) {
+//   maxNum = 40;
+//   attempts = 5;
+// } else if (pathName === `/hard.html`) {
+//   maxNum = 100;
+//   attempts = 3;
+// } else {
+//   console.log(`error`);
+// }
+
+if (pathName.includes("easy")) {
   maxNum = 10;
   attempts = 10;
-} else if (pathName === `/medium.html`) {
+} else if (pathName.includes("medium")) {
   maxNum = 40;
   attempts = 5;
-} else if (pathName === `/hard.html`) {
+} else if (pathName.includes("hard")){
   maxNum = 100;
   attempts = 3;
 } else {

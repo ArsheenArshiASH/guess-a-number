@@ -4,6 +4,8 @@ var buttonCheck = document.getElementById("btnCheck");
 var attempsId = document.getElementById("attemptsId");
 var result = document.getElementById("result");
 var answer = document.getElementById("questionNum");
+var guessForm = document.getElementById("guessForm") ;
+
 var attempts = 0;
 
 // path name for max numbers
@@ -36,7 +38,7 @@ if (pathName.includes("easy")) {
   console.log(`error`);
 }
 var randomNum = Math.floor(Math.random() * maxNum) + 1;
-// console.log(randomNum);
+console.log(randomNum);
 
 // logic
 
@@ -48,7 +50,8 @@ guess.addEventListener("blur", function () {
   guess.style.outline = "1px solid grey";
 });
 
-buttonCheck.addEventListener("click", function () {
+guessForm.addEventListener("submit", function (e) {
+  e.preventDefault() ;
   var value = guess.value;
   if (value === "") {
     alert("Please enter your guess");
